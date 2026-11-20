@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="유아준의 개인 소개 웹사이트" />
+  <title>AJUN | Personal Website</title>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --text: #18202b;
+      --muted: #687386;
+      --accent: #4263eb;
+      --line: #e7eaf0;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      max-width: 1080px; margin: auto; padding: 17px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-size: 15px; font-weight: 800; letter-spacing: .12em; }
+    .nav-links { display: flex; gap: 26px; font-size: 13px; font-weight: 650; color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+    main { max-width: 1080px; margin: auto; padding: 38px 24px 80px; }
+    .hero {
+      min-height: 440px; padding: 62px; border-radius: 30px;
+      background: #172033; color: white; display: grid;
+      grid-template-columns: 1.25fr .75fr; align-items: center; gap: 42px;
+      overflow: hidden;
+    }
+    .eyebrow { color: #aebce0; font-size: 12px; letter-spacing: .2em; font-weight: 750; }
+    h1 { font-size: clamp(42px, 6vw, 70px); line-height: 1.08; margin: 18px 0; letter-spacing: -.055em; }
+    .hero p { color: #d0d7e5; max-width: 520px; margin: 0; font-size: 16px; }
+    .hero-photo {
+      width: 100%; max-width: 270px; aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,.22); border-radius: 28px;
+      background: linear-gradient(145deg, #293753, #202a3d);
+      display: flex; align-items: center; justify-content: center;
+      color: #c5cee0; text-align: center; padding: 20px; margin: auto;
+      overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .section {
+      margin-top: 26px; padding: 48px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+    }
+    .section-label { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+    h2 { font-size: 30px; margin: 8px 0 22px; letter-spacing: -.04em; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .lead { font-size: 19px; font-weight: 650; line-height: 1.6; }
+    .muted { color: var(--muted); }
+    .interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .interest {
+      padding: 22px; border-radius: 17px; background: #f5f7fb;
+      border: 1px solid #edf0f5;
+    }
+    .interest .emoji { font-size: 27px; }
+    .interest h3 { margin: 12px 0 5px; font-size: 17px; }
+    .interest p { margin: 0; color: var(--muted); font-size: 13px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .contact-link {
+      padding: 12px 18px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--accent); font-weight: 700; font-size: 14px;
+    }
+    footer { text-align: center; color: #929baa; font-size: 12px; padding: 30px 10px 0; }
+    @media (max-width: 700px) {
+      nav { padding: 15px 18px; align-items: flex-start; }
+      .nav-links { gap: 12px; font-size: 11px; flex-wrap: wrap; justify-content: flex-end; }
+      main { padding: 20px 15px 55px; }
+      .hero { padding: 36px 25px; grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .hero-photo { max-width: 190px; grid-row: 1; }
+      .hero p { margin: auto; }
+      .section { padding: 30px 23px; }
+      .about-grid, .interest-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">AJUN'S SPACE</a>
+      <div class="nav-links">
+        <a href="#about">ABOUT ME</a>
+        <a href="#interests">INTERESTS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="home">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">WELCOME TO MY SPACE</div>
+        <h1>Hello,<br>I'm Ajun.</h1>
+        <p>안녕하세요. 저를 소개하는 작은 공간입니다.<br>관심 있는 것들을 알아가고 새로운 경험을 쌓아가고 있습니다.</p>
+      </div>
+      <div class="hero-photo">
+        <!-- 나중에 images/profile.jpg 파일을 넣으면 이 안내 문구 대신 사진이 표시됩니다. -->
+        <span>PROFILE PHOTO<br><small>나중에 사진을 추가할 수 있어요</small></span>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="section-label">01 / ABOUT ME</div>
+      <h2>저를 소개합니다.</h2>
+      <div class="about-grid">
+        <div>
+          <p class="lead">저는 유아준입니다.<br>아직 다양한 가능성을 알아가고 있는 학생입니다.</p>
+        </div>
+        <div class="muted">
+          이곳에는 나의 성격, 중요하게 생각하는 가치, 학교생활이나 목표 등을 자유롭게 작성할 수 있습니다.
+          정해진 답을 찾기보다 여러 경험을 통해 나만의 방향을 만들어 가고 있습니다.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="interests">
+      <div class="section-label">02 / INTERESTS</div>
+      <h2>제가 관심 있는 것들.</h2>
+      <div class="interest-grid">
+        <article class="interest">
+          <div class="emoji">🏀</div>
+          <h3>농구</h3>
+          <p>농구를 즐기고 경기와 플레이에 관심이 있습니다.</p>
+        </article>
+        <article class="interest">
+          <div class="emoji">💻</div>
+          <h3>컴퓨터 & 기술</h3>
+          <p>컴퓨터 하드웨어와 웹사이트, 새로운 기술을 알아가는 것을 좋아합니다.</p>
+        </article>
+        <article class="interest">
+          <div class="emoji">🦎</div>
+          <h3>동물</h3>
+          <p>동물에 관심이 있고 생물을 관찰하고 알아가는 것을 좋아합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-label">03 / CONTACT</div>
+      <h2>연락하기.</h2>
+      <p class="muted">연락처를 공개하고 싶을 때 아래 내용을 본인의 정보로 바꿔 주세요.</p>
+      <div class="contact-row">
+        <!-- 아래 이메일 주소를 본인이 공개해도 되는 주소로 바꾸세요. -->
+        <a class="contact-link" href="mailto:your-email@example.com">Email me ↗</a>
+        <!-- 공개할 SNS가 있다면 아래 링크의 #을 실제 주소로 바꾸세요. -->
+        <a class="contact-link" href="#" onclick="alert('SNS 주소를 추가해 주세요.'); return false;">Social media ↗</a>
+      </div>
+    </section>
+    <footer>© 2026 AJUN. Made with HTML & CSS.</footer>
+  </main>
+</body>
+</html>
